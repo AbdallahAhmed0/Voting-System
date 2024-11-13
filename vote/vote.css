@@ -1,18 +1,21 @@
- body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(90deg, #fff3cd, #ebc656, #ffcc31); /* Left-to-right gradient */
-            padding-top: 30px;
-        }
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(90deg, #fff3cd, #ebc656, #ffcc31); /* Left-to-right gradient */
+    padding-top: 30px;
+}
 
-        .container {
-            width: 80%;
-            max-width: 850px !important; /* Limits the container width to 850px */
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
+.container {
+    width: 80%;
+    max-width: 850px !important; /* Limits the container width to 850px */
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    direction: rtl; /* Set text direction to right-to-left */
+    text-align: right; /* Align text to the right */
+
+}
 /* Flex container for switches */
 .switch-container {
     display: flex;
@@ -21,6 +24,7 @@
 }
 
 /* Switch styling */
+/* Default styling for .switch */
 .switch {
     position: relative;
     display: inline-block;
@@ -29,6 +33,14 @@
     margin-right: 10px;
 }
 
+/* Media query for screens 768px or smaller */
+@media (max-width: 768px) {
+    .switch {
+        width: 45px; /* Decrease width for mobile screens */
+        height: 24px; /* Decrease height for mobile screens */
+        margin-right: 5px; /* Adjust margin for better spacing */
+    }
+}
 /* Hide the checkbox */
 .switch input {
     opacity: 0;
