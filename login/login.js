@@ -1,4 +1,4 @@
-const nationalId = document.getElementById('nationalId');
+    const nationalId = document.getElementById('nationalId');
     const birthDate = document.getElementById('birthDate');
     const nationalIdError = document.getElementById('nationalIdError');
     const birthDateError = document.getElementById('birthDateError');
@@ -47,6 +47,7 @@ const nationalId = document.getElementById('nationalId');
         event.preventDefault();
 
         // Only submit if the button is not disabled
+
         if (!submitBtn.disabled) {
             window.location.href = '../vote/vote.html'; // Change to your actual success page
         } else {
