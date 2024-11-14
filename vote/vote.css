@@ -153,6 +153,16 @@ input:checked + .slider:before {
             border-radius: 20px; /* Slightly rounded corners */
             border: 0.1rem solid #ffc107; /* Bootstrap primary color */
         }
+        /* Media query for screens 768px or smaller */
+        @media (max-width: 768px) {
+            .degree-input {
+            padding-right: 5px;
+        }
+        
+    }
+
+        
+        
         /* Apply shadow and border color on hover */
         .degree-input:hover {
             border-color: #ffc107; /* Bootstrap primary color */
