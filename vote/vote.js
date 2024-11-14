@@ -9,12 +9,14 @@ function toggleVoteType(voteType) {
 
     // If regularVote is checked, uncheck cumulativeVote, and vice versa
     if (voteType === 'regularVote') {
-        if (regularVote.checked) {
+        if (regularVote.checked || !cumulativeVote.checked) {
+            regularVote.checked = true;
             cumulativeVote.checked = false;
             generateQuestions(false);  // Regular vote type
         }
     } else if (voteType === 'cumulativeVote') {
-        if (cumulativeVote.checked) {
+        if (cumulativeVote.checked || !regularVote.checked) {
+            cumulativeVote.checked = true;
             regularVote.checked = false;
             generateQuestions(true);  // Cumulative vote type
         }
@@ -24,9 +26,17 @@ function toggleVoteType(voteType) {
 // Function to dynamically generate questions based on vote type
 function generateQuestions(isCumulativeVote) {
     const questionsContainer = document.getElementById('questionsContainer');
+    
+    
+    
+    
+    // get by api
     const numQuestions = 5;  // Number of questions
     const optionsPerQuestion = 3;  // Number of options per question
 
+
+    
+    
     // Loop to create multiple questions dynamically
     for (let i = 1; i <= numQuestions; i++) {
         const questionDiv = document.createElement('div');
@@ -87,7 +97,6 @@ function generateQuestions(isCumulativeVote) {
 function submitData(event) {
     event.preventDefault(); // Prevents the default submit behavior
 
-    const questionsContainer = document.getElementById('questionsContainer');
     const questionsData = [];
 
     // Gather selected options and degree values
