@@ -20,6 +20,11 @@ body, html {
     height: auto;
     margin-bottom: 20px; /* Space between the image and the form */
 }
+@media (max-width: 768px) {
+    .login-image {
+        width: 250px;
+    }
+}
 .form-group label {
     text-align: right;
     display: block;
